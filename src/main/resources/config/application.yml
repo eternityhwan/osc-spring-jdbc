@@ -2,20 +2,15 @@ server:
   port: 8080
 
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springjdbc?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
     password: 1q2w3e4r
-    hikari:
-      pool-name: hikari-cp
-      maximum-pool-size: 30
-      minimum-idle: 2
-      data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
+
 
 logging:
   level:
